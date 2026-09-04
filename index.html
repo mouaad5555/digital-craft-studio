@@ -3,223 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIGITAL CRAFT STUDIO | المعرض البرمجي</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>DIGITAL CRAFT STUDIO | وكالة الحلول البرمجية</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d0714;
-            --card-bg: rgba(25, 16, 38, 0.6);
+            --bg-color: #0c0714;
+            --card-bg: rgba(23, 15, 38, 0.65);
             --accent-purple: #9d4edd;
             --light-purple: #c77dff;
-            --glow: #7b2cbf;
-            --text-color: #e0aaff;
-            --text-dim: #a39ba8;
+            --glow-color: rgba(157, 78, 221, 0.4);
+            --text-main: #ffffff;
+            --text-dim: #b8b0c3;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
-            color: #ffffff;
-            min-height: 100vh;
-            padding: 40px 20px;
+            color: var(--text-main);
+            line-height: 1.6;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(123, 44, 191, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(157, 78, 221, 0.15) 0%, transparent 40%);
+                radial-gradient(circle at 15% 20%, rgba(123, 44, 191, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(157, 78, 221, 0.15) 0%, transparent 45%);
+            background-attachment: fixed;
         }
 
-        .container {
-            max-width: 1200px;
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(12, 7, 20, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(199, 125, 255, 0.15);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, var(--light-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-purple);
+            text-shadow: 0 0 10px var(--glow-color);
+        }
+
+        /* Layout Sections */
+        section {
+            padding: 100px 8% 40px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        header {
+        .section-title {
             text-align: center;
-            padding: 50px 20px;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 20px;
-            border: 1px solid rgba(199, 125, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            font-size: 2.2rem;
             margin-bottom: 40px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #ffffff, var(--light-purple));
+            background: linear-gradient(135deg, #fff, var(--light-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
         }
 
-        header p {
-            color: var(--text-color);
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .contact-bar {
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+            padding-top: 140px;
         }
 
-        .contact-item {
-            color: var(--light-purple);
-            text-decoration: none;
-            font-size: 0.9rem;
-            background: rgba(157, 78, 221, 0.1);
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(199, 125, 255, 0.2);
-            transition: all 0.3s ease;
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
-        .contact-item:hover {
-            background: var(--accent-purple);
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #7b2cbf, var(--accent-purple));
             color: #fff;
-            box-shadow: 0 0 15px var(--glow);
+            padding: 12px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px var(--glow-color);
+            transition: 0.3s;
         }
 
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(157, 78, 221, 0.6);
+        }
+
+        /* Cards Grid Layout (About & Services) */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(199, 125, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(199, 125, 255, 0.4);
+            box-shadow: 0 10px 30px var(--glow-color);
+        }
+
+        .glass-card i {
+            font-size: 2rem;
+            color: var(--light-purple);
+            margin-bottom: 15px;
+        }
+
+        .glass-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .glass-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* GitHub Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
 
-        .card {
+        .project-card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(199, 125, 255, 0.15);
             border-radius: 16px;
             padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            transition: 0.3s;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-purple), var(--light-purple));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--light-purple);
+            box-shadow: 0 8px 25px var(--glow-color);
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(199, 125, 255, 0.4);
-            box-shadow: 0 10px 30px rgba(123, 44, 191, 0.3);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card h3 {
-            color: #ffffff;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card h3 i {
-            color: var(--light-purple);
-        }
-
-        .card p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .card-footer {
+        .project-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 20px;
             padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .tag {
             background: rgba(157, 78, 221, 0.2);
             color: var(--light-purple);
-            padding: 4px 12px;
-            border-radius: 8px;
+            padding: 4px 10px;
+            border-radius: 6px;
             font-size: 0.8rem;
-            border: 1px solid rgba(199, 125, 255, 0.2);
         }
 
-        .btn {
-            background: linear-gradient(135deg, var(--glow), var(--accent-purple));
-            color: white;
-            padding: 8px 18px;
-            text-decoration: none;
+        .btn-link {
+            color: #fff;
+            background: var(--accent-purple);
+            padding: 6px 14px;
             border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(123, 44, 191, 0.3);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            opacity: 0.9;
-            box-shadow: 0 0 20px var(--accent-purple);
+        .btn-link:hover {
+            background: var(--light-purple);
         }
 
-        #loading {
+        /* Contact Section */
+        .contact-box {
             text-align: center;
-            font-size: 1.3rem;
-            color: var(--light-purple);
-            margin: 50px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .whatsapp-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(157, 78, 221, 0.12);
+            border: 1px solid rgba(199, 125, 255, 0.25);
+            padding: 12px 20px;
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-purple);
+            box-shadow: 0 0 15px var(--glow-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-dim);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>DIGITAL CRAFT STUDIO</h1>
-            <p>تطوير الحلول البرمجية والمواقع الإلكترونية الاحترافية</p>
-            <div class="contact-bar">
-                <a href="https://instagram.com/digital.craft_studio" target="_blank" class="contact-item"><i class="fab fontawesome-free"></i> @digital.craft_studio</a>
-                <span class="contact-item"><i class="fab fa-whatsapp"></i> +213 784 425 864</span>
-                <span class="contact-item"><i class="fab fa-whatsapp"></i> +213 562 01 44 65</span>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">DIGITAL CRAFT STUDIO</div>
+        <ul class="nav-links">
+            <li><a href="#about">عن الوكالة</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>نصمم ونطور <br><span style="color: var(--light-purple);">الحلول الرقمية المستقبلية</span></h1>
+        <p>نحن نبتكر واجهات مستخدم استثنائية ونبني تطبيقات وبرمجيات ذكية تناسب متطلبات تطلعاتك بأحدث التقنيات.</p>
+        <a href="#contact" class="cta-btn">ابدأ مشروعك معنا</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">عن الاستوديو</h2>
+        <div class="grid-3">
+            <div class="glass-card">
+                <i class="fas fa-microchip"></i>
+                <h3>ابتكار تقني</h3>
+                <p>نعتمد أحدث البرمجيات وهندسة الذكاء الاصطناعي لتطوير منتجات رقمية فائقة الأداء.</p>
             </div>
-        </header>
+            <div class="glass-card">
+                <i class="fas fa-palette"></i>
+                <h3>تصميم عصري</h3>
+                <p>نهتم بأسلوب الـ Glassmorphic العصري والتفاعلي لتقديم تجربة تجذب العميل.</p>
+            </div>
+            <div class="glass-card">
+                <i class="fas fa-rocket"></i>
+                <h3>سرعة وجودة</h3>
+                <p>التزام تام بالدقة والاحترافية والتشغيل السلس عبر جميع الأجهزة والمنصات.</p>
+            </div>
+        </div>
+    </section>
 
-        <div id="loading"><i class="fas fa-spinner fa-spin"></i> جاري استدعاء المشاريع البرمجية...</div>
-        
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">خدماتنا</h2>
+        <div class="grid-3">
+            <div class="glass-card">
+                <i class="fas fa-code"></i>
+                <h3>تطوير المواقع</h3>
+                <p>إنشاء مواقع وتطبيقات web متكاملة وأنيقة مصممة خصيصاً لنشاطك التجاري.</p>
+            </div>
+            <div class="glass-card">
+                <i class="fas fa-brain"></i>
+                <h3>أنظمة الذكاء الاصطناعي</h3>
+                <p>بناء محركات تحليل ومعالجة بيانات متقدمة (مثل محركات الرؤية الحاسوبية والتقييم الآلي).</p>
+            </div>
+            <div class="glass-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>واجهات المستخدم UI/UX</h3>
+                <p>تصميم واجهات جذابة ومريحة تضمن أفضل تجربة واستجابة للمستخدمين.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">معرض المشاريع الحية (GitHub)</h2>
+        <div id="loading-projects" style="text-align: center; color: var(--light-purple);">جاري تحميل المشاريع...</div>
         <div class="projects-grid" id="projects-container"></div>
-    </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-box glass-card">
+            <h2 class="section-title" style="margin-bottom: 15px;">تواصل معنا</h2>
+            <p style="color: var(--text-dim);">جاهزون لتحويل فكرتك إلى واقع رقمي، تواصل معنا مباشرة عبر القنوات التالية:</p>
+            
+            <div class="whatsapp-list">
+                <a href="https://wa.me/213784425864" target="_blank" class="contact-btn">
+                    <i class="fab fa-whatsapp"></i> +213 784 425 864
+                </a>
+                <a href="https://wa.me/213562014465" target="_blank" class="contact-btn">
+                    <i class="fab fa-whatsapp"></i> +213 562 01 44 65
+                </a>
+                <a href="https://wa.me/213556882628" target="_blank" class="contact-btn">
+                    <i class="fab fa-whatsapp"></i> +213 556 88 26 28
+                </a>
+                <a href="https://instagram.com/digital.craft_studio" target="_blank" class="contact-btn">
+                    <i class="fab fa-instagram"></i> @digital.craft_studio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 DIGITAL CRAFT STUDIO. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- GitHub Auto Fetch Script -->
     <script>
         const githubUsername = 'mouaad5555';
 
-        async function fetchGitHubProjects() {
+        async function loadGithubProjects() {
             const container = document.getElementById('projects-container');
-            const loading = document.getElementById('loading');
+            const loading = document.getElementById('loading-projects');
 
             try {
                 const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`);
@@ -230,28 +384,28 @@
                 repos.forEach(repo => {
                     if (!repo.fork) {
                         const card = document.createElement('div');
-                        card.className = 'card';
+                        card.className = 'project-card';
 
                         card.innerHTML = `
                             <div>
-                                <h3><i class="fas fa-code-branch"></i> ${repo.name}</h3>
-                                <p>${repo.description ? repo.description : 'مشروع برمجي متكامل تم تطويره بأسلوب احترافي ضمن خدمات DigitalCraft Studio.'}</p>
+                                <h3 style="color: #fff; margin-bottom: 10px;"><i class="fas fa-folder-open" style="color: var(--light-purple);"></i> ${repo.name}</h3>
+                                <p style="color: var(--text-dim); font-size: 0.9rem;">${repo.description ? repo.description : 'مشروع برمجي متميز ضمن حلول DigitalCraft Studio.'}</p>
                             </div>
-                            <div class="card-footer">
+                            <div class="project-footer">
                                 <span class="tag">${repo.language || 'Code'}</span>
-                                <a href="${repo.html_url}" target="_blank" class="btn">معاينة <i class="fas fa-external-link-alt"></i></a>
+                                <a href="${repo.html_url}" target="_blank" class="btn-link">عرض الكود <i class="fas fa-external-link-alt"></i></a>
                             </div>
                         `;
 
                         container.appendChild(card);
                     }
                 });
-            } catch (error) {
-                loading.innerHTML = 'حدث خطأ أثناء اتصال الشبكة.';
+            } catch (err) {
+                loading.innerText = 'تعذر تحميل المشاريع تلقائياً.';
             }
         }
 
-        fetchGitHubProjects();
+        loadGithubProjects();
     </script>
 </body>
 </html>
