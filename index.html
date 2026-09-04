@@ -1,65 +1,177 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8"><meta name="hosting-provider" content="Netlify"><meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=a944def6-7d76-4b75-9f06-0f83eb7061c8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>DIGITAL CRAFT STUDIO | Agency Portfolio</title>    <!-- Font Awesome Icons -->    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    <!-- Google Fonts -->    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">        <style>        :root {            --bg-dark: #080914;            --bg-card: rgba(15, 17, 35, 0.85);            --border-neon: rgba(168, 85, 247, 0.4);            --primary-red: #8b3dff;            --primary-gradient: linear-gradient(135deg, #8b3dff 0%, #a855f7 100%);            --glow-color: rgba(168, 85, 247, 0.35);            --text-main: #ffffff;            --text-muted: #a0a5c0;        }
-        * {            margin: 0;            padding: 0;            box-sizing: border-box;            font-family: 'Plus Jakarta Sans', sans-serif;            scroll-behavior: smooth;        }
-        body {            background-color: var(--bg-dark);            color: var(--text-main);            overflow-x: hidden;            line-height: 1.6;            background-image:                 radial-gradient(circle at 10% 20%, rgba(139, 61, 255, 0.12) 0%, transparent 40%),                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;        }
-        /* Glassmorphism Navigation */        nav {            display: flex;            justify-content: space-between;            align-items: center;            padding: 1.2rem 8%;            position: fixed;            width: 100%;            top: 0;            z-index: 1000;            background: rgba(8, 9, 20, 0.85);            backdrop-filter: blur(20px);            border-bottom: 2px solid rgba(168, 85, 247, 0.3);        }
-        .logo {            font-family: 'Teko', sans-serif;            font-size: 2.2rem;            letter-spacing: 2px;            color: var(--text-main);            text-transform: uppercase;        }
-        .logo span {            color: var(--primary-red);            text-shadow: 0 0 10px var(--glow-color);        }
-        .nav-links {            display: flex;            gap: 2rem;            list-style: none;        }
-        .nav-links a {            color: var(--text-muted);            text-decoration: none;            font-weight: 700;            text-transform: uppercase;            font-size: 0.95rem;            letter-spacing: 1px;            transition: 0.3s;        }
-        .nav-links a:hover {            color: var(--primary-red);            text-shadow: 0 0 8px var(--glow-color);        }
-        /* Hero Section */        .hero {            min-height: 100vh;            display: flex;            align-items: center;            justify-content: center;            text-align: center;            padding: 0 1rem;            background: linear-gradient(180deg, rgba(8,9,20,0.4) 0%, rgba(8,9,20,0.9) 100%),                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;            position: relative;        }
-        .hero::after {            content: '';            position: absolute;            bottom: 0;            width: 100%;            height: 4px;            background: var(--primary-gradient);            box-shadow: 0 0 15px var(--primary-red);        }
-        .hero-content h1 {            font-family: 'Teko', sans-serif;            font-size: 5rem;            text-transform: uppercase;            letter-spacing: 3px;            margin-bottom: 0.5rem;            line-height: 1;        }
-        .hero-content h1 span {            color: var(--primary-red);            text-shadow: 0 0 20px var(--glow-color);        }
-        .hero-content p {            font-size: 1.25rem;            color: var(--text-muted);            max-width: 650px;            margin: 0 auto 2.5rem;        }
-        .btn-group {            display: flex;            gap: 1.5rem;            justify-content: center;        }
-        .btn {            padding: 0.9rem 2.5rem;            border-radius: 8px;            font-weight: 700;            text-transform: uppercase;            letter-spacing: 1px;            text-decoration: none;            transition: 0.3s;        }
-        .btn-primary {            background: var(--primary-gradient);            color: #fff;            box-shadow: 0 0 25px var(--glow-color);            border: none;        }
-        .btn-primary:hover {            transform: translateY(-3px) scale(1.03);            box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);        }
-        .btn-outline {            border: 2px solid var(--primary-red);            color: var(--text-main);            background: rgba(139, 61, 255, 0.05);        }
-        .btn-outline:hover {            background: var(--primary-red);            box-shadow: 0 0 20px var(--glow-color);        }
-        /* Banner Stats Bar */        .stats-banner {            background: var(--primary-gradient);            display: flex;            justify-content: space-around;            align-items: center;            padding: 2rem 5%;            box-shadow: 0 0 30px rgba(139, 61, 255, 0.4);        }
-        .stat-item {            text-align: center;        }
-        .stat-item h3 {            font-family: 'Teko', sans-serif;            font-size: 3.5rem;            line-height: 1;            color: #fff;        }
-        .stat-item p {            font-size: 0.9rem;            text-transform: uppercase;            font-weight: 700;            letter-spacing: 1px;            color: rgba(255, 255, 255, 0.85);        }
-        /* Section Styling */        section {            padding: 6rem 8%;        }
-        .section-title {            text-align: center;            margin-bottom: 4rem;        }
-        .section-title h2 {            font-family: 'Teko', sans-serif;            font-size: 3.5rem;            text-transform: uppercase;            letter-spacing: 2px;        }
-        .section-title p {            color: var(--text-muted);            margin-top: -0.5rem;        }
-        .title-line {            width: 80px;            height: 4px;            background: var(--primary-red);            margin: 0.5rem auto 0;            border-radius: 2px;            box-shadow: 0 0 10px var(--primary-red);        }
-        /* Grid Layouts */        .grid {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));            gap: 2rem;        }
-        /* Cards Styling */        .card {            background: var(--bg-card);            border: 1px solid var(--border-neon);            border-radius: 16px;            overflow: hidden;            transition: 0.4s ease;            position: relative;            display: flex;            flex-direction: column;        }
-        .card-img {            width: 100%;            height: 200px;            object-fit: cover;            border-bottom: 2px solid var(--border-neon);        }
-        .card-body {            padding: 2rem;            display: flex;            flex-direction: column;            justify-content: space-between;            flex-grow: 1;        }
-        .project-link {            text-decoration: none;            color: inherit;            display: block;        }
-        .card:hover {            transform: translateY(-8px);            border-color: var(--primary-red);            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.25);        }
-        .card-icon {            font-size: 2.5rem;            margin-bottom: 1rem;            color: var(--primary-red);        }
-        .card h3 {            font-size: 1.4rem;            margin-bottom: 0.8rem;        }
-        .card p {            color: var(--text-muted);            font-size: 0.95rem;            margin-bottom: 1.5rem;        }
-        .card span {            display: inline-block;            font-size: 0.85rem;            color: #fff;            background: rgba(139, 61, 255, 0.2);            border: 1px solid var(--primary-red);            padding: 0.4rem 0.8rem;            border-radius: 6px;            font-weight: 600;        }
-        .external-btn {            margin-top: 1rem;            display: inline-flex;            align-items: center;            gap: 0.5rem;            font-size: 0.9rem;            color: var(--primary-red);            font-weight: 700;            text-transform: uppercase;        }
-        /* About Section */        .about-box {            background: var(--bg-card);            border: 2px solid var(--border-neon);            border-radius: 20px;            padding: 3.5rem;            text-align: center;            max-width: 900px;            margin: 0 auto;            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);        }
-        .about-box p {            font-size: 1.2rem;            color: var(--text-muted);            line-height: 1.8;        }
-        /* Contact Section */        .contact-container {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));            gap: 2rem;        }
-        .contact-card {            background: var(--bg-card);            border: 1px solid var(--border-neon);            border-radius: 16px;            padding: 2.5rem;            text-align: center;        }
-        .whatsapp-buttons {            display: flex;            flex-direction: column;            gap: 1rem;            margin-top: 1.5rem;        }
-        .wa-btn {            display: flex;            align-items: center;            justify-content: center;            gap: 0.8rem;            background: rgba(37, 211, 102, 0.15);            color: #25d366;            border: 1px solid rgba(37, 211, 102, 0.4);            padding: 0.9rem;            border-radius: 8px;            text-decoration: none;            font-weight: 700;            transition: 0.3s;        }
-        .wa-btn:hover {            background: #25d366;            color: #000;            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);        }
-        .insta-btn {            display: inline-flex;            align-items: center;            gap: 0.8rem;            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);            color: #fff;            padding: 1rem 2rem;            border-radius: 8px;            text-decoration: none;            font-weight: 700;            margin-top: 1.5rem;            transition: 0.3s;            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);        }
-        .insta-btn:hover {            transform: translateY(-2px);            box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);        }
-        footer {            text-align: center;            padding: 2.5rem;            border-top: 1px solid var(--border-neon);            color: var(--text-muted);            font-size: 0.9rem;            background: rgba(8, 9, 20, 0.95);        }
-        @media (max-width: 768px) {            .hero-content h1 { font-size: 3.5rem; }            .nav-links { display: none; }            .stats-banner { flex-direction: column; gap: 1.5rem; }        }    </style></head><body>
-    <!-- Navigation -->    <nav>        <div class="logo">DIGITAL CRAFT <span>STUDIO</span></div>        <ul class="nav-links">            <li><a href="#services">Services</a></li>            <li><a href="#projects">Projects</a></li>            <li><a href="#about">About Us</a></li>            <li><a href="#contact">Contact</a></li>        </ul>    </nav>
-    <!-- Hero Section -->    <section class="hero">        <div class="hero-content">            <h1>FORGE YOUR <span>DIGITAL PRESENCE</span></h1>            <p>Web Development • Graphic Design • Custom Code Solutions tailored for maximum impact.</p>            <div class="btn-group">                <a href="#projects" class="btn btn-primary">OUR WORK</a>                <a href="#contact" class="btn btn-outline">GET IN TOUCH</a>            </div>        </div>    </section>
-    <!-- Stats Banner -->    <div class="stats-banner">        <div class="stat-item">            <h3>50+</h3>            <p>Projects Delivered</p>        </div>        <div class="stat-item">            <h3>100%</h3>            <p>Client Satisfaction</p>        </div>        <div class="stat-item">            <h3>24/7</h3>            <p>Technical Support</p>        </div>    </div>
-    <!-- Services Section -->    <section id="services">        <div class="section-title">            <h2>OUR EXPERTISE</h2>            <p>Comprehensive digital solutions engineered for modern brands</p>            <div class="title-line"></div>        </div>        <div class="grid">            <div class="card">                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Web Development">                <div class="card-body">                    <i class="fa-solid fa-code card-icon"></i>                    <h3>Web Development</h3>                    <p>High-performance responsive websites and tailored applications.</p>                </div>            </div>            <div class="card">                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Digital Platforms">                <div class="card-body">                    <i class="fa-solid fa-layer-group card-icon"></i>                    <h3>Digital Platforms</h3>                    <p>Custom dashboards, internal tools, and management portals.</p>                </div>            </div>            <div class="card">                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Graphic Design">                <div class="card-body">                    <i class="fa-solid fa-palette card-icon"></i>                    <h3>Graphic Design</h3>                    <p>Visual identities, logos, and high-converting marketing materials.</p>                </div>            </div>        </div>    </section>
-    <!-- Projects Section -->    <section id="projects">        <div class="section-title">            <h2>FEATURED PROJECTS</h2>            <p>A glimpse into what we design and build</p>            <div class="title-line"></div>        </div>        <div class="grid">            <!-- Live Project 1: Spade Gym -->            <a href="https://islem-adis.github.io/Spade-Gym-Project/" target="_blank" class="project-link">                <div class="card">                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Spade Gym">                    <div class="card-body">                        <div>                            <i class="fa-solid fa-dumbbell card-icon"></i>                            <h3>Spade Gym Platform</h3>                            <p>Modern responsive landing page for fitness centers with interactive membership UI.</p>                        </div>                        <div>                            <span>WEB DEV • UI/UX • LIVE DEMO</span>                            <div class="external-btn">                                VISIT SITE <i class="fa-solid fa-arrow-up-right-from-square"></i>                            </div>                        </div>                    </div>                </div>            </a>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalCraft Studio | معرض المشاريع</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-            <!-- Live Project 2: Medical Learning Platform -->            <a href="https://medical-learning-platform.onrender.com/" target="_blank" class="project-link">                <div class="card">                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Medical Learning Platform">                    <div class="card-body">                        <div>                            <i class="fa-solid fa-notes-medical card-icon"></i>                            <h3>Medical Learning Platform</h3>                            <p>Interactive educational platform for medical learning and research resources.</p>                        </div>                        <div>                            <span>ACADEMIC • WEB APP • LIVE DEMO</span>                            <div class="external-btn">                                VISIT SITE <i class="fa-solid fa-arrow-up-right-from-square"></i>                            </div>                        </div>                    </div>                </div>            </a>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-            <!-- Project Card 3 -->            <div class="card">                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Digital Platform">                <div class="card-body">                    <div>                        <i class="fa-solid fa-chart-line card-icon"></i>                        <h3>Digital Analytics Platform</h3>                        <p>Scalable, interactive dashboards and complete digital solutions.</p>                    </div>                    <span>WEB APP • DASHBOARD</span>                </div>            </div>        </div>    </section>
-    <!-- About Section -->    <section id="about">        <div class="section-title">            <h2>ABOUT DIGITAL CRAFT STUDIO</h2>            <div class="title-line"></div>        </div>        <div class="about-box">            <p>At <strong>DIGITAL CRAFT STUDIO</strong>, we bridge creativity and technology to build modern, high-impact digital experiences. From custom web development and intelligent platforms to striking visual design, we help brands scale with style and technical efficiency.</p>        </div>    </section>
-    <!-- Contact Section -->    <section id="contact">        <div class="section-title">            <h2>CONNECT WITH US</h2>            <p>Let's bring your vision to life</p>            <div class="title-line"></div>        </div>        <div class="contact-container">            <!-- Instagram Box -->            <div class="contact-card">                <i class="fa-brands fa-instagram card-icon"></i>                <h3>INSTAGRAM</h3>                <p>Follow our journey and view our latest creative showcases.</p>                <a href="https://www.instagram.com/digital.craft_studio" target="_blank" class="insta-btn">                    <i class="fa-brands fa-instagram"></i> @digital.craft_studio                </a>            </div>
-            <!-- WhatsApp Box -->            <div class="contact-card">                <i class="fa-brands fa-whatsapp card-icon"></i>                <h3>DIRECT WHATSAPP</h3>                <p>Reach out directly for quotes, inquiries, or consultations.</p>                <div class="whatsapp-buttons">                    <a href="https://wa.me/213784425864" target="_blank" class="wa-btn">                        <i class="fa-brands fa-whatsapp"></i> +213 784 425 864                    </a>                    <a href="https://wa.me/213562014465" target="_blank" class="wa-btn">                        <i class="fa-brands fa-whatsapp"></i> +213 562 01 44 65                    </a>                    <a href="https://wa.me/213556882628" target="_blank" class="wa-btn">                        <i class="fa-brands fa-whatsapp"></i> +213 556 88 26 28                    </a>                </div>            </div>        </div>    </section>
-    <!-- Footer -->    <footer>        <p>&copy; 2026 DIGITAL CRAFT STUDIO. All Rights Reserved.</p>    </footer>
-</body></html>
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1f2937, #111827);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+        }
+
+        header h1 {
+            color: #58a6ff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #8b949e;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .card h3 {
+            color: #f0f6fc;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2ea043;
+        }
+
+        .tag {
+            background-color: #21262d;
+            color: #58a6ff;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid #30363d;
+        }
+
+        #loading {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #8b949e;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>DigitalCraft Studio</h1>
+            <p>معرض المشاريع الرقمية والحلول البرمجية</p>
+        </header>
+
+        <div id="loading">جاري تحميل مشاريعك من GitHub... 🚀</div>
+        
+        <div class="projects-grid" id="projects-container"></div>
+    </div>
+
+    <script>
+        // اسم حسابك في GitHub
+        const githubUsername = 'mouaad5555';
+
+        async function fetchGitHubProjects() {
+            const container = document.getElementById('projects-container');
+            const loading = document.getElementById('loading');
+
+            try {
+                // جلب المشاريع مرتبة حسب التحديث الأخير
+                const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`);
+                const repos = await response.json();
+
+                loading.style.display = 'none';
+
+                repos.forEach(repo => {
+                    if (!repo.fork) {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+
+                        card.innerHTML = `
+                            <div>
+                                <h3>${repo.name}</h3>
+                                <p>${repo.description ? repo.description : 'مشروع برمجي متميز ضمن منصة DigitalCraft Studio.'}</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag">${repo.language || 'Code'}</span>
+                                <a href="${repo.html_url}" target="_blank" class="btn">عرض المشروع 🔗</a>
+                            </div>
+                        `;
+
+                        container.appendChild(card);
+                    }
+                });
+            } catch (error) {
+                loading.innerText = 'حدث خطأ أثناء تحميل المشاريع.';
+                console.error(error);
+            }
+        }
+
+        fetchGitHubProjects();
+    </script>
+</body>
+</html>
